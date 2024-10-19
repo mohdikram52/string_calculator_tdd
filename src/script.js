@@ -14,8 +14,15 @@ function calculate(numbers) {
 
     const numArray = numbers.split(new RegExp(`[${delimiter}\n]`));
     
+    
+    const negativeNum = numArray.filter(num => parseInt(num) < 0);
 
     
+    if (negativeNum.length > 0) {
+        throw new Error(`Negative numbers not allowed: ${negativeNum.join(',')}`);
+    }
+    
+
     const sum = numArray.reduce((total, num) => total + parseInt(num), 0);
     console.log(sum)
     return sum;
@@ -23,7 +30,7 @@ function calculate(numbers) {
 
   }
   
-calculate("1\n2,3");
+
 
 module.exports = calculate;
   
