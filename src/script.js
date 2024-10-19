@@ -4,8 +4,11 @@ function calculate(numbers) {
       return 0;
     }
     
-    return parseInt(numbers);
-    
+    const numArray = numbers.split(','); 
+    const sum = numArray.reduce((total, num) => total + parseInt(num), 0); 
+    console.log(sum);
+    return sum;
+
   }
   
 calculate("2,3,2");
