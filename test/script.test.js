@@ -19,3 +19,7 @@ test('It returns sum of multiple numbers', () => {
 test('It handle newlines between numbers', () => {
     expect(calculate("1\n2,3")).toBe(6);
   });
+
+test('It handles different delimiters at the start of the string', () => {
+    expect(calculate("//;\n1;2")).toBe(3);
+  });
